@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cuenta Regresiva de Amor</title>
+    <script>
+        function updateCountdown() {
+            const startDate = new Date("March 5, 2025 00:00:00").getTime();
+            const targetDate = new Date("April 30, 2025 00:00:00").getTime();
+            const now = new Date().getTime();
+
+            if (now < startDate) {
+                document.getElementById("countdown").innerText = "La cuenta regresiva comenzará el 5 de marzo. 💖";
+            } else {
+                const diff = targetDate - now;
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+                document.getElementById("countdown").innerText = `Faltan ${days} días, ${hours} horas, ${minutes} minutos y ${seconds} segundos para tu cumpleaños 💖`;
+            }
+        }
+
+        function showMessage() {
+            const messages = [
+                "Faltan 56 días para tu cumpleaños y mi amor por ti crece cada día más. 💖",
+                "Cada día que pasa es un día menos para celebrar el amor de mi vida. Faltan 55 días ❤",
+                "Eres mi razón de ser y en 54 días festejaremos tu existencia con todo mi corazón. 🎉",
+                "Cada segundo contigo es un regalo, y pronto celebraremos tu día especial. Faltan 53 días 🎁",
+                "No hay palabras suficientes para describir lo mucho que te amo. Faltan 52 días 💕",
+                "Tu sonrisa ilumina mi mundo y en 51 días la celebraremos como se merece. 😊",
+                "Eres el sueño que nunca quiero despertar. Faltan 50 días para tu gran día. 🌙",
+                "En 49 días celebraremos tu vida, pero para mí, cada día contigo es una celebración. 🎂",
+                "Eres la melodía más hermosa en mi corazón. Faltan 48 días 🎶",
+                "Faltan 47 días y mi emoción crece con cada momento que pasa. 💘",
+                "No hay distancia que apague este amor tan grande. Faltan 46 días 💞",
+                "Tu amor me da fuerzas, tu risa me da vida. Faltan 45 días 🌟",
+                "Cada día es una página más en nuestra historia de amor. Faltan 44 días📖",
+                "Te amo más de lo que las palabras pueden expresar. Faltan 43 días💓",
+                "En 42 días será tu cumpleaños y quiero hacerlo inolvidable para ti. 🎊",
+                "Eres la luz de mi vida, la estrella que guía mi camino. Faltan 41 días✨",
+                "No puedo esperar para verte feliz en tu gran día. Faltan 40 días 😍",
+                "Tus abrazos son mi refugio favorito. Faltan 39 días 🤗",
+                "Cada día a tu lado es un día perfecto. Faltan 38 días 💕",
+                "Faltan 37 días y mi corazón late con más fuerza por ti. 💖",
+                "Eres la persona más maravillosa que he conocido. Faltan 36 días❤",
+                "No hay nada más bonito que amarte cada día. Faltan 35 días 💘",
+                "Cada día cuenta en nuestra hermosa historia de amor. Faltan 34 días 📜",
+                "No importa la distancia, mi amor por ti es infinito. Faltan 33 días 💞",
+                "Eres mi mejor regalo de la vida. Faltan 32 días 🎁",
+                "Cada día que pasa me enamoro más de ti. Faltan 31 días💕",
+                "Faltan 30 días para tu cumpleaños y mi amor es más fuerte que nunca. 💖",
+                "Eres mi inspiración diaria, mi motivación constante. Faltan 29 días💫",
+                "No puedo esperar para ver tu hermosa sonrisa en tu cumpleaños. Faltan 28 días😊",
+                "Amarte es lo mejor que me ha pasado en la vida. Faltan 27 días💝",
+                "Cada día contigo es un hermoso capítulo de nuestra historia de amor. Faltan 26 días📖",
+                "No hay nada más especial que compartir la vida a tu lado. Faltan 25 días❤",
+                "Faltan 24 días y mi corazón está lleno de amor por ti. 💕",
+                "Eres el sueño que nunca quiero dejar de vivir. Faltan 23 días 🌙",
+                "Tu amor es mi mayor fortuna. Faltan 22 días💎",
+                "Eres el sol que ilumina mis días y la luna que guía mis noches. Faltan 21 días🌞🌙",
+                "Cada segundo contigo es un tesoro. Faltan 20 días💖",
+                "Faltan 19 días y cada día te amo más. 💓",
+                "Eres mi paz, mi alegría, mi amor eterno. Faltan 18 días 💕",
+                "Cada día es un nuevo motivo para agradecer por tenerte en mi vida. Faltan 17 días 😊",
+                "Nuestro amor es un viaje hermoso que quiero recorrer contigo siempre. Faltan 16 días🚀",
+                "Faltan 15 días para tu cumpleaños y no puedo dejar de sonreír. 😊",
+                "Te amo con cada fibra de mi ser. Faltan 14 días 💘",
+                "Eres la razón por la que cada día es especial. Faltan 13 días 💕",
+                "No hay nadie en el mundo que me haga sentir como tú lo haces. Faltan 12 días 💖",
+                "Cada latido de mi corazón dice tu nombre. Faltan 11 días❤",
+                "Faltan solo 10 días para celebrar el día más hermoso del año. 🎉",
+                "Eres mi refugio, mi calma y mi amor eterno. Faltan 9 días 💞",
+                "No hay palabras suficientes para describir mi amor por ti. Faltan 8 días 💝",
+                "En 7 días celebraremos el regalo más hermoso del universo: tú. 🎁",
+                "Cada día contigo es un milagro de amor. Faltan 6 días💕",
+                "Faltan solo 5 días y mi emoción es inmensa. 😍",
+                "Eres mi persona favorita en el mundo. Faltan 4 días💖",
+                "En solo 3 días será tu gran día. No puedo esperar. 🎊",
